@@ -1,0 +1,15 @@
+.nav-link.btn-base {
+    color: #1B325F;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    padding: 4px 12px;
+    transition: all 0.2s;
+}
+
+.nav-link.btn-base:hover,
+.nav-link.btn-base.active {
+    border: 1px solid #a4cdfc;
+    background: #a4cdfc;
+    color: #ff0000 !important;
+}

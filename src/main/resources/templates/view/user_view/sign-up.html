@@ -1,0 +1,81 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Đăng ký</title>
+</head>
+
+<body class="bg-light py-5 h-100">
+	<div class="container">
+		<div class="row">
+			<div class="container py-5">
+				<div class="row justify-content-center align-items-center">
+
+					<!-- FORM -->
+					<div class="col-md-6 col-lg-5">
+						<div class="card shadow p-4">
+
+							<h2 class="text-center mb-4 text-primary">Tạo Tài Khoản</h2>
+
+							<p th:if="${success}" class="alert alert-success text-center">
+								<span th:text="${success}"></span>
+							</p>
+
+							<p th:if="${er}" class="alert alert-danger text-center">
+								<span th:text="${er}"></span>
+							</p>
+
+							<form th:object="${userModel}"
+								th:action="@{/EvenDecor/signUpForm}" method="post">
+								<input type="hidden" th:field="*{id}">
+
+								<div class="mb-3">
+									<input type="text" class="form-control" placeholder="Họ Tên"
+										th:field="*{name}" /> <small class="text-danger"
+										th:errors="*{name}"></small>
+								</div>
+
+								<div class="mb-3">
+									<input type="email" class="form-control" placeholder="Email"
+										th:field="*{email}" /> <small class="text-danger"
+										th:errors="*{email}"></small>
+								</div>
+
+								<div class="mb-3">
+									<input type="password" class="form-control"
+										placeholder="Mật khẩu" th:field="*{pass}" /> <small
+										class="text-danger" th:errors="*{pass}"></small>
+								</div>
+
+								<div class="mb-3">
+									<input type="text" class="form-control"
+										placeholder="Số điện thoại" th:field="*{number_phone}" /> <small
+										class="text-danger" th:errors="*{number_phone}"></small>
+								</div>
+
+								<div class="mb-3">
+									<input type="text" class="form-control" placeholder="Địa chỉ"
+										th:field="*{place}" /> <small class="text-danger"
+										th:errors="*{place}"></small>
+								</div>
+
+								<button class="btn btn-primary w-100">Đăng ký</button>
+
+								<div class="text-center mt-3">
+									Bạn đã có tài khoản? <a th:href="@{/EvenDecor/login}"
+										class="text-primary fw-bold"> Đăng nhập </a>
+								</div>
+
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+<!-- 			<div class="col-md-6 d-none d-md-block"> -->
+<!-- 				<img src="https://placehold.co/600x700" -->
+<!-- 					class="img-fluid rounded shadow"> -->
+<!-- 			</div> -->
+		</div>
+	</div>
+</body>
+</html>
