@@ -38,6 +38,7 @@ public class AdCate {
     
     @DeleteMapping("/{id}")
     public void deleteCategory(@PathVariable int id){
+        // test git commit
         cateSer.deleteCategory(id);
     }
 }
